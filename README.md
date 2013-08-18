@@ -1,7 +1,7 @@
-SourceTalk for Sublime Text 2
+SourceTalk for Sublime Text 2/3
 ==============
 
-SourceTalk plugin for Sublime Text 2 allows you to initialize a code discussion conference directly from your editor
+SourceTalk plugin for Sublime Text 2/3 allows you to initialize a code discussion conference directly from your editor
 
 ## Installation
 
