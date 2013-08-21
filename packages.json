@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0",
+  "packages": [
+    {
+      "name": "SourceTalk",
+      "details": "https://github.com/malroc/sourcetalk_st2",
+      "releases": [
+        {
+          "details": "https://github.com/malroc/sourcetalk_st2/tags"
+        }
+      ]
+    }
+  ]
+}
