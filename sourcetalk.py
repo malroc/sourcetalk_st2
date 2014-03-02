@@ -3,6 +3,11 @@ import os
 import webbrowser
 import urllib
 try:
+  import urllib.request
+  import urllib.parse
+except ImportError:
+  pass
+try:
   import urllib2
 except ImportError:
   pass
