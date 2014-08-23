@@ -36,7 +36,7 @@ class SourcetalkCommand(sublime_plugin.TextCommand):
     except AttributeError:
       params = urllib.urlencode(options)
 
-    url = "http://app.sourcetalk.net/conferences.json"
+    url = "http://app.sourcetalk.net/conferences"
     try:
       req = urllib.request.Request(url, params)
     except AttributeError:
