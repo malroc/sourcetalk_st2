@@ -12,6 +12,7 @@ try:
 except ImportError:
   pass
 
+
 class SourcetalkCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     file_content = self.view.substr(sublime.Region(0, self.view.size()))
@@ -21,10 +22,13 @@ class SourcetalkCommand(sublime_plugin.TextCommand):
     except AttributeError:
       conf_name = "untitled"
 
-    (row,col) = self.view.rowcol(self.view.sel()[0].begin())
+    (row, col) = self.view.rowcol(self.view.sel()[0].begin())
 
-    options = {'conference[file_name]': conf_name,
-               'conference[source]': file_content}
+    options = {
+      'conference[source_files_attributes][0][name]': conf_name,
+      'conference[source_files_attributes][0][source]': file_content,
+      'conference[source_files_attributes][0][scroll_position]': str(row + 1)
+    }
 
     try:
       params_raw = urllib.parse.urlencode(options)
@@ -32,7 +36,7 @@ class SourcetalkCommand(sublime_plugin.TextCommand):
     except AttributeError:
       params = urllib.urlencode(options)
 
-    url = "http://app.sourcetalk.net/conferences"
+    url = "http://app.sourcetalk.net/conferences.json"
     try:
       req = urllib.request.Request(url, params)
     except AttributeError:
@@ -48,4 +52,4 @@ class SourcetalkCommand(sublime_plugin.TextCommand):
       print(e)
       return
 
-    webbrowser.open(response.geturl() + "/" + str(row + 1))
+    webbrowser.open(response.geturl())
