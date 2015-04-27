@@ -1,9 +1,26 @@
-[  
-    {  
-        "id": "tools",  
-        "children":  
+[
+    {
+        "id": "tools",
+        "children":
         [
-            { "command": "sourcetalk" }  
-        ]  
+            {
+                "caption": "SourceTalk",
+                "children":
+                [
+                    {
+                        "caption": "Set API token",
+                        "command": "sourcetalk_prompt_set_token"
+                    },
+                    {
+                        "caption": "Choose conference",
+                        "command": "sourcetalk_prompt_choose_conference"
+                    },
+                    {
+                        "caption": "Add file to current conference",
+                        "command": "sourcetalk_create_file"
+                    }
+                ]
+            }
+        ]
     }
 ]
